@@ -1,0 +1,203 @@
+:root {
+  --backGround: hsl(222, 26%, 31%);
+  --keypadBackground: hsl(223, 31%, 20%);
+  --toggleBackground: hsl(223, 31%, 20%);
+  --screenBackground: hsl(224, 36%, 15%);
+  --delete_Reset_key_Background: hsl(225, 21%, 49%);
+  --delete_Reset_key_Shadow: hsl(224, 28%, 35%);
+  --equals_toggle_color: hsl(6, 63%, 50%);
+  --equals_toggle_shadow: hsl(6, 70%, 34%);
+  --other_keys_background: hsl(30, 25%, 89%);
+  --other_keys_shadow: hsl(28, 16%, 65%);
+  --fontStyle: "League Spartan", sans-serif;
+  --keyColor: hsl(221, 14%, 31%);
+  --keyColor2: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  transition: 0.5s;
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+body {
+  background: var(--backGround);
+  display: flex;
+  align-items: center;
+  transition: 1s;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main {
+  width: 350px;
+  height: 85vh;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  width: auto;
+  flex-basis: 10%;
+  display: flex;
+  align-items: center;
+  color: var(--keyColor2);
+}
+
+.description h3 {
+  font-family: var(--fontStyle);
+}
+
+.description p {
+  margin-left: auto;
+  font-family: var(--fontStyle);
+}
+
+.description .toggle {
+  margin-left: 10px;
+}
+
+.screen {
+  width: auto;
+  flex-basis: 20%;
+  margin: 20px 0;
+  background-color: var(--screenBackground);
+}
+
+.keypad {
+  width: auto;
+  background-color: var(--keypadBackground);
+  flex-basis: 70%;
+  display: grid;
+  padding: 20px 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.keypad .number {
+  background-color: var(--other_keys_background);
+  display: flex;
+  border-radius: 10px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontStyle);
+  color: var(--keyColor);
+  font-size: 23px;
+  box-shadow: 1px 3px 1px 0px var(--other_keys_shadow);
+  cursor: pointer;
+}
+.keypad .number:hover {
+  filter: brightness(1.5);
+}
+
+.reset {
+  grid-column: 1/3;
+  border-radius: 10px;
+  border: none;
+  align-items: center;
+  font-size: 23px;
+  cursor: pointer;
+  justify-content: center;
+  font-family: var(--fontStyle);
+  background: var(--delete_Reset_key_Background);
+  color: var(--keyColor2);
+  box-shadow: 1px 3px 1px 0px var(--delete_Reset_key_Shadow);
+}
+
+.reset_del {
+  background: var(--delete_Reset_key_Background);
+  border-radius: 10px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontStyle);
+  font-size: 23px;
+  cursor: pointer;
+  color: var(--keyColor2);
+  box-shadow: 1px 3px 1px 0px var(--delete_Reset_key_Shadow);
+}
+
+.reset:hover,
+.reset_del:hover {
+  filter: brightness(1.5);
+}
+
+.equal {
+  grid-column: 3/-1;
+  border-radius: 10px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontStyle);
+  background-color: var(--equals_toggle_color);
+  font-size: 23px;
+  cursor: pointer;
+  color: var(--keyColor2);
+  box-shadow: 1px 3px 1px 0px var(--equals_toggle_shadow);
+}
+
+.equal:hover {
+  /* background: var(--equals_toggle_shadow); */
+  filter: brightness(1.5);
+}
+
+/* Toggle Css */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 10px;
+  width: 65px;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggleBackground);
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.round {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--equals_toggle_color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* Rounded sliders */
+.round {
+  border-radius: 34px;
+}
+
+.round {
+  border-radius: 50%;
+}
+.screen {
+  display: flex;
+  font-size: 50px;
+  align-items: center;
+  justify-content: right;
+  padding: 20px;
+  color: var(--other_keys_background);
+}

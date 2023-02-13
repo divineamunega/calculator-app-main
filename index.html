@@ -1,26 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <title>Frontend Mentor | Calculator app</title>
+    <style>
+      .attribution {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+      }
+      .attribution a {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      /* Center the loader */
+      #loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
 
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      /* Add animation to "page content" */
+      .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s;
+      }
+
+      @-webkit-keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0;
+          opacity: 1;
+        }
+      }
+
+      #myDiv {
+        display: none;
+      }
+    </style>
+    <div id="loader"></div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.github.com/divineamunega">divinethecoder</a>.
+    </div>
+    <main id="myDiv" class="animate-bottom">
+      <div class="description">
+        <h3>Calc</h3>
+        <p>THEME</p>
+        <div class="toggle">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+            ">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <label class="switch">
+            <div class="slider">
+              <div class="round"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="screen border-radius"></div>
+      <div class="keypad border-radius">
+        <button class="number" value="8">8</button>
+        <button class="number" value="7">7</button>
+        <button class="number" value="9">9</button>
+        <button class="reset_del">Del</button>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="number" value="+">+</button>
+        <button class="number" value="1">1</button>
+        <button class="number" value="2">2</button>
+        <button class="number" value="3">3</button>
+        <button class="number" value="-">-</button>
+        <button class="number" value=".">.</button>
+        <button class="number" value="0">0</button>
+        <button class="number" value="/">/</button>
+        <button class="number" value="*">x</button>
+        <button class="reset">RESET</button>
+        <button class="equal">=</button>
+      </div>
+    </main>
+
+    <script>
+      const showPage = function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "flex";
+      };
+      window.addEventListener("load", function () {
+        showPage();
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
 </html>
